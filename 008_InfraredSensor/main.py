@@ -3,7 +3,7 @@ from pybricks.hubs import EV3Brick
 from pybricks.ev3devices import InfraredSensor
 from pybricks.parameters import Port, Button
 from pybricks.tools import wait
-from pybricks.media.ev3dev import Font
+from pybricks.media.ev3dev import SoundFile, Font
 
 # Create the brick connection.
 ev3 = EV3Brick()
@@ -28,22 +28,26 @@ while True:
         break
     
     elif Button.LEFT_UP in buttons and Button.RIGHT_UP in buttons:
-        ev3.speaker.say('up')
+        ev3.speaker.play_file(Sound.UP)
     elif Button.LEFT_DOWN in buttons and Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('down')
+        ev3.speaker.play_file(Sound.DOWN)
     elif Button.LEFT_UP in buttons and Button.LEFT_DOWN in buttons:
         ev3.speaker.say('left')
     elif Button.RIGHT_UP in buttons and Button.RIGHT_DOWN in buttons:
         ev3.speaker.say('right')
 
     elif Button.LEFT_UP in buttons:
-        ev3.speaker.say('left up')
+        ev3.speaker.play_file(Sound.LEFT)
+        ev3.speaker.play_file(Sound.UP)
     elif Button.LEFT_DOWN in buttons:
-        ev3.speaker.say('left down')
+        ev3.speaker.play_file(Sound.LEFT)
+        ev3.speaker.play_file(Sound.DOWN)
     elif Button.RIGHT_UP in buttons:
-        ev3.speaker.say('right up')
+        ev3.speaker.play_file(Sound.RIGHT)
+        ev3.speaker.play_file(Sound.UP)
     elif Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('right down')
+        ev3.speaker.play_file(Sound.RIGHT)
+        ev3.speaker.play_file(Sound.DOWN)
 
 ev3.speaker.say('come to me')
 
@@ -70,22 +74,26 @@ while True:
     wait(10)
 
     if Button.LEFT_UP in buttons and Button.RIGHT_UP in buttons and Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('Good Buy!')
+        ev3.speaker.play_file(Sound.GOODBYE)
         break
     elif Button.LEFT_UP in buttons and Button.RIGHT_UP in buttons:
-        ev3.speaker.say('up')
+        ev3.speaker.play_file(Sound.UP)
     elif Button.LEFT_DOWN in buttons and Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('down')
+        ev3.speaker.play_file(Sound.DOWN)
     elif Button.LEFT_UP in buttons and Button.LEFT_DOWN in buttons:
-        ev3.speaker.say('left')
+        ev3.speaker.play_file(Sound.LEFT)
     elif Button.RIGHT_UP in buttons and Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('right')
+        ev3.speaker.play_file(Sound.RIGHT)
 
     elif Button.LEFT_UP in buttons:
-        ev3.speaker.say('left up')
+        ev3.speaker.play_file(Sound.LEFT)
+        ev3.speaker.play_file(Sound.UP)
     elif Button.LEFT_DOWN in buttons:
-        ev3.speaker.say('left down')
+        ev3.speaker.play_file(Sound.LEFT)
+        ev3.speaker.play_file(Sound.DOWN)
     elif Button.RIGHT_UP in buttons:
-        ev3.speaker.say('right up')
+        ev3.speaker.play_file(Sound.RIGHT)
+        ev3.speaker.play_file(Sound.UP)
     elif Button.RIGHT_DOWN in buttons:
-        ev3.speaker.say('right down')
+        ev3.speaker.play_file(Sound.RIGHT)
+        ev3.speaker.play_file(Sound.DOWN)

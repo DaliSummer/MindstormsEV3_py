@@ -1,8 +1,6 @@
 #!/usr/bin/env pybricks-micropython
 from pybricks.hubs import EV3Brick
-
 from pybricks.tools import wait
-
 from pybricks.media.ev3dev import SoundFile
 
 # Create your objects here.
@@ -35,5 +33,6 @@ ev3.speaker.play_notes(['E4/4', 'D4/4', 'D4/4', 'E4/4'], 150)
 ev3.speaker.play_notes(['D4/2', 'G4/4'], 150)
 
 # Plays music from file
+ev3.speaker.play_file(SoundFile.FANTASTIC)
 ev3.speaker.play_file("../data/pcm0808m.wav")
 ev3.speaker.play_file("../data/a2002011001-e02.wav")
